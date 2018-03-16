@@ -10,11 +10,7 @@ The first version of the app was developed by a team of graduates from Class14 a
 
 They did an awesome job within the short amount of time they had. So many thanks and credits to them for getting Version 1.0 up and running:
 
-[Nayhane Gomes](https://github.com/Nayhane)
-[Anissa Miloudi](https://github.com/AMiloudi)
-[Erle Monfils](https://github.com/Erlemorgaine)
-[Oscar van Zijverden](https://github.com/Schmarfy)
-[Caspar Boetes](https://github.com/Casparboetes)
+[Nayhane Gomes](https://github.com/Nayhane), [Anissa Miloudi](https://github.com/AMiloudi), [Erle Monfils](https://github.com/Erlemorgaine), [Oscar van Zijverden](https://github.com/Schmarfy), [Caspar Boetes](https://github.com/Casparboetes)
 
 ## Current main features:
 **sign-up**
