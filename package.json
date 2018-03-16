@@ -7,6 +7,7 @@
     "history": "^4.7.2",
     "material-icons": "^0.1.0",
     "material-ui": "^0.19.4",
+    "node-sass-chokidar": "^1.1.0",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-bubble": "^1.0.5",
@@ -26,6 +27,8 @@
     "underscore": "^1.8.3"
   },
   "scripts": {
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
