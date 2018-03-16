@@ -1,4 +1,3 @@
-// src/actions/user/sign-up.js
 import API from '../../api/client'
 import {
   APP_LOADING,

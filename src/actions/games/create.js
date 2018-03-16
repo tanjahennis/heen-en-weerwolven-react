@@ -1,4 +1,3 @@
-// src/actions/games/create.js
 import API from '../../api/client'
 import {
   APP_LOADING,
@@ -12,8 +11,6 @@ const api = new API()
 export default (newPlayer) => {
   return (dispatch) => {
     dispatch({ type: APP_LOADING })
-
-    // console.log(newPlayer)
 
     api.post('/players', newPlayer)
       .then(() => {

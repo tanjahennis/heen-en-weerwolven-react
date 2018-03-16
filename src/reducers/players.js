@@ -1,5 +1,4 @@
 import { FETCHED_ONE_PLAYER, FETCHED_PLAYERS } from '../actions/games/fetch'
-//import  MOVE_PLAYERS  from '../actions/games/move'
 import {
   PLAYER_CREATED,
   PLAYER_REMOVED,

@@ -2,10 +2,8 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { fetchPlayers} from '../actions/games/fetch'
-//components
 import Village from './Village'
 
-// MUI
 import { List } from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 

@@ -1,4 +1,3 @@
-// src/styles/theme.js
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
 // Colors

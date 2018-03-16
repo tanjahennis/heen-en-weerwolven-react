@@ -1,4 +1,3 @@
-// src/actions/websocket.js
 import io from 'socket.io-client'
 import { push } from 'react-router-redux'
 import API from '../api/client'
