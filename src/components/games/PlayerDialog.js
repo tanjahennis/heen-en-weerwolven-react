@@ -1,8 +1,6 @@
 import React, { PureComponent } from 'react'
-//import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
-//components
 import PlayerMenuButton from './PlayerMenuButton'
 import updateDeath from '../../actions/games/updateDeath'
 import updateMayor from '../../actions/games/updateMayor'

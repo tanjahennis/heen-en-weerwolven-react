@@ -1,20 +1,16 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-
 import Divider from 'material-ui/Divider';
 import { fetchPlayers } from '../actions/games/fetch'
 import AvatarPlayer from './AvatarPlayer'
-
 import { List } from 'material-ui/List';
 import Subheader from 'material-ui/Subheader';
-
 
 
 class VillageAvatar extends PureComponent {
   componentWillMount() {
     this.props.fetchPlayers();
   }
-
 
   render() {
     const village1 = this.props.players.filter((player) => {
@@ -24,7 +20,6 @@ class VillageAvatar extends PureComponent {
     const village2 = this.props.players.filter((player) => {
       return player.village[0].name === "Sluimervoort"
     })
-
 
     return (
 
@@ -46,12 +41,10 @@ class VillageAvatar extends PureComponent {
   }
 }
 
-
 const mapStateToProps = ({ currentUser, players }) => {
   return {
     players
   }
 }
-
 
 export default connect(mapStateToProps, { fetchPlayers })(VillageAvatar)

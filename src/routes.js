@@ -3,7 +3,6 @@ import { Route } from 'react-router-dom'
 
 import {
   Lobby,
-  //Game,
   SignIn,
   SignUp,
   UserPage,

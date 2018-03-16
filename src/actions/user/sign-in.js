@@ -1,4 +1,3 @@
-// src/actions/user/sign-in.js
 import { replace } from 'react-router-redux'
 import API from '../../api/client'
 import {
@@ -26,7 +25,6 @@ export default ({ email, password}) => {
 
         api.storeToken(jwt)
 
-        // Redirect programatically to the Lobby
         dispatch(replace('/'))
 
         dispatch(websocket.connect())

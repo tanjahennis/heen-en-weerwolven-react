@@ -4,14 +4,12 @@ import { push } from 'react-router-redux'
 import _ from 'underscore'
 import { fetchPlayers} from '../actions/games/fetch'
 
-//components
 import Sidebar from './Sidebar'
 import Timer from '../components/games/Timer'
 import VillageAvatar from './VillageAvatar'
 import Dialog from 'material-ui/Dialog'
 import FlatButton from 'material-ui/FlatButton'
 import './Lobby.css'
-
 
 const customContentStyle = {
   width: '50%',

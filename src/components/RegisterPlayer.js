@@ -160,47 +160,47 @@ export class MakePhoto extends PureComponent {
             value={this.state.name}
             maxLength="12"
           />
-          
-        <p style={{ color: 'red'}} >{this.state.photoError}</p>
 
-        <div style={cameraBox}>
-            <div className='screenshots'>
-              <div className='controls'>
-                <RaisedButton
-                  label='Capture photo!'
-                  labelPosition='before'
-                  primary={true}
-                  icon={<AddPhotoIcon />}
-                  onClick={this.handlePhotoClick}
-                  style={styleButton}
-                />
+          <p style={{ color: 'red'}} >{this.state.photoError}</p>
 
-                <RaisedButton
-                  label='Register user!'
-                  labelPosition='before'
-                  primary={true}
-                  icon={<DoneIcon />}
-                  onClick={this.handleSaveRegistration}
-                />
+          <div style={cameraBox}>
+              <div className='screenshots'>
+                <div className='controls'>
+                  <RaisedButton
+                    label='Capture photo!'
+                    labelPosition='before'
+                    primary={true}
+                    icon={<AddPhotoIcon />}
+                    onClick={this.handlePhotoClick}
+                    style={styleButton}
+                  />
+
+                  <RaisedButton
+                    label='Register user!'
+                    labelPosition='before'
+                    primary={true}
+                    icon={<DoneIcon />}
+                    onClick={this.handleSaveRegistration}
+                  />
+
+                  </div>
+
+                  <Webcam
+                    className='newPhoto'
+                    audio={false}
+                    ref={this.setRef}
+                    screenshotFormat='image/jpeg'
+                    width={400}
+                    style={styleCamera}
+                  />
+
 
                 </div>
-
-                <Webcam
-                  className='newPhoto'
-                  audio={false}
-                  ref={this.setRef}
-                  screenshotFormat='image/jpeg'
-                  width={400}
-                  style={styleCamera}
-                />
-
-
+              <div>
+              { this.state.photo ? <img src={this.state.photo} alt='Player' style={stylePhoto} /> : null}
               </div>
-            <div>
-            {this.state.photo ? <img src={this.state.photo} alt='Player' style={stylePhoto} /> : null}
             </div>
-          </div>
-          </Dialog >
+          </Dialog>
         </div>
       )
     }
