@@ -1,0 +1,58 @@
+/* .medal{
+  height: 1rem;
+  margin: 5px;
+}
+ */
+.sidebar-dead {
+  background-color: #484c68;
+}
+
+.medal-sidebar{
+  height: 1.5rem;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 3px;
+  z-index: 1000;
+}
+
+.sidebar-name:hover, .sidebar-name:hover p {
+  color: #1f243d;
+  background-color: #d8d8d8;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 2px 2px 0 0;
+  z-index:1000;
+}
+
+.nameblock {
+  color: #EFEFEF;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-left: 10px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.nameblock p {
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+}
+
+.nameblock:hover + .pop-over, .pop-over:hover {
+  display: block;
+  position: relative;
+  background-color: #d8d8d8;
+  border-radius: 0 0 2px 2px;
+  margin: 0 auto;
+  z-index:1000;
+}
+
+.pop-over {
+  display: none;
+  text-align: center;
+}
