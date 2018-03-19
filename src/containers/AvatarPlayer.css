@@ -1,25 +1,24 @@
-.avatar-box{
-  height: 120px;
-  width: 100px;
-}
-
-.playerName{
-  word-break: break-all;
-  overflow: hidden;
-  text-align: center;
-  color: #EFEFEF;
-  height: 40px;
-  width: 100px;
-  font-size: 1.25rem;
-}
-
-
-.dead{
-  filter: opacity(30%);
-}
-
-.avatar-medal{
-  height: 4rem;
-  margin-top: 45px;
-  margin-right: 20px;
-}
+.avatarContainer {
+  display: flex;
+  flex-flow: row wrap; }
+  .avatarContainer .dead img {
+    filter: opacity(30%); }
+  .avatarContainer .avatar {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin: 1rem; }
+    .avatarContainer .avatar .playerName {
+      display: flex;
+      flex-flow: row nowrap;
+      color: #EFEFEF;
+      font-size: 1.25rem;
+      height: 2rem;
+      padding-top: 0.75rem; }
+      .avatarContainer .avatar .playerName .medal {
+        height: 2rem;
+        width: auto;
+        margin-left: -1.5rem; }
+    .avatarContainer .avatar .playerCharacter {
+      color: #D32F2F;
+      font-variant: small-caps; }
