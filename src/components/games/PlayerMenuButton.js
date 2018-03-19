@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import IconButton from 'material-ui/IconButton'
 
-import IconLocationOn from 'material-ui/svg-icons/communication/location-on'
 import SwapIcon from 'material-ui/svg-icons/communication/swap-calls'
 import EnvelopeIcon from 'material-ui/svg-icons/content/mail'
 import DeleteIcon from 'material-ui/svg-icons/action/delete'
@@ -51,11 +50,11 @@ class PlayerMenuButton extends PureComponent {
       case 'Sluimervoort' :
         return ['Move to Wakkerdam', <SwapIcon />]
 
-      case 'DeletePlayer':
+      case 'DeletePlayer' :
         return ['Delete player', <DeleteIcon />]
 
       default :
-        return ['exclamation-circle', <IconLocationOn />]
+        return []
     }
   }
 
@@ -63,7 +62,6 @@ class PlayerMenuButton extends PureComponent {
     const { onClick } = this.props
     const buttonStyle = {
       margin: 1,
-      // width: '15px',
       color: 'rgb(7, 10, 51)',
     }
 

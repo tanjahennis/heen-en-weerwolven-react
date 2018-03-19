@@ -6,13 +6,15 @@ import updateDeath from '../../actions/games/updateDeath'
 import updateMayor from '../../actions/games/updateMayor'
 import updateSender from '../../actions/games/updateSender'
 import updateVillage from '../../actions/games/updateVillage'
+import updateCharacter from '../../actions/games/updateCharacter'
 import deletePlayer from '../../actions/games/delete'
 
 import MessageBox from './MessageBox'
-
 import Dialog from 'material-ui/Dialog'
-import RaisedButton from 'material-ui/RaisedButton';
+import RaisedButton from 'material-ui/RaisedButton'
 
+import DropDownMenu from 'material-ui/DropDownMenu';
+import MenuItem from 'material-ui/MenuItem';
 
 const customContentStyle = {
   width: '90%',
@@ -25,6 +27,7 @@ class PlayerDialog extends PureComponent {
 
     this.state = {
       open: false,
+      value: 'villager',
     }
   }
 
@@ -119,6 +122,86 @@ class PlayerDialog extends PureComponent {
     this.props.updateVillage(player._id, updatedVillage)
   }
 
+  addWitch = (player) => {
+    const updatedCharacter = {
+      character: 'witch'
+    }
+
+    this.props.updateCharacter(player._id, updatedCharacter)
+  }
+
+  addVillager = (player) => {
+    const updatedCharacter = {
+      character: 'villager'
+    }
+
+    this.props.updateCharacter(player._id, updatedCharacter)
+  }
+
+  addWerewolf = (player) => {
+    const updatedCharacter = {
+      character: 'werewolf'
+    }
+
+    this.props.updateCharacter(player._id, updatedCharacter)
+  }
+
+  addHunter = (player) => {
+    const updatedCharacter = {
+      character: 'hunter'
+    }
+
+    this.props.updateCharacter(player._id, updatedCharacter)
+  }
+
+  addSeer = (player) => {
+    const updatedCharacter = {
+      character: 'seer'
+    }
+
+    this.props.updateCharacter(player._id, updatedCharacter)
+  }
+
+  addCupid = (player) => {
+    const updatedCharacter = {
+      character: 'cupid'
+    }
+
+    this.props.updateCharacter(player._id, updatedCharacter)
+  }
+
+  addLover = (player) => {
+    const updatedCharacter = {
+      character: 'lover'
+    }
+
+    this.props.updateCharacter(player._id, updatedCharacter)
+  }
+
+  addExecutioner = (player) => {
+    const updatedCharacter = {
+      character: 'executioner'
+    }
+
+    this.props.updateCharacter(player._id, updatedCharacter)
+  }
+
+  addBrother = (player) => {
+    const updatedCharacter = {
+      character: 'brother'
+    }
+
+    this.props.updateCharacter(player._id, updatedCharacter)
+  }
+
+  addThief = (player) => {
+    const updatedCharacter = {
+      character: 'thief'
+    }
+
+    this.props.updateCharacter(player._id, updatedCharacter)
+  }
+
   render() {
     const message = 'message'
     const isMayor = 'isMayor'
@@ -143,6 +226,18 @@ class PlayerDialog extends PureComponent {
         <PlayerMenuButton icon={dead} onClick={() => this.killPlayer(this.props.player)}/>
         <PlayerMenuButton disabled={this.props.player.dead? true : false} icon={village} onClick={() => this.moveVillage(this.props.player)}/>
         <PlayerMenuButton icon={DeletePlayer} onClick={() => this.deleteThisPlayer(this.props.player)}/>
+        <DropDownMenu value={this.state.value}>
+          <MenuItem value="villager" primaryText="villager" onClick={() => this.addVillager(this.props.player)} />
+          <MenuItem value="werewolf" primaryText="werewolf" onClick={() => this.addWerewolf(this.props.player)} />
+          <MenuItem value="witch" primaryText="witch" onClick={() => this.addWitch(this.props.player)} />
+          <MenuItem value="hunter" primaryText="hunter" onClick={() => this.addHunter(this.props.player)} />
+          <MenuItem value="seer" primaryText="seer" onClick={() => this.addSeer(this.props.player)} />
+          <MenuItem value="cupid" primaryText="cupid" onClick={() => this.addCupid(this.props.player)} />
+          <MenuItem value="lover" primaryText="lover" onClick={() => this.addLover(this.props.player)} />
+          <MenuItem value="executioner" primaryText="executioner" onClick={() => this.addExecutioner(this.props.player)} />
+          <MenuItem value="brother" primaryText="brother" onClick={() => this.addBrother(this.props.player)} />
+          <MenuItem value="thief" primaryText="thief" onClick={() => this.addThief(this.props.player)} />
+        </DropDownMenu>
 
         <Dialog
           actions={actions}
@@ -158,7 +253,7 @@ class PlayerDialog extends PureComponent {
   }
 }
 
-const mapStateToProps = ({  players }) => {
+const mapStateToProps = ({ players }) => {
   return {
     players
   }
@@ -170,4 +265,5 @@ export default connect(mapStateToProps, {
   updateSender,
   updateVillage,
   deletePlayer,
+  updateCharacter,
 })(PlayerDialog)
