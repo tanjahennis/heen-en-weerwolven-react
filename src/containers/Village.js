@@ -78,8 +78,8 @@ class Village extends PureComponent {
 
     return (
       <div>
-        <VillageMenuButton label={`Move players to ${villageName}`} onClick={ () => this.moveAllPlayers(this.props.players) }/>
         <div>{ this.props.players.map(this.renderPlayer) }</div>
+        <VillageMenuButton label={`Move players to ${villageName}`} onClick={ () => this.moveAllPlayers(this.props.players) } />
       </div>
     )
   }
