@@ -13,11 +13,11 @@ export const iNeedReadability = '#edf2ff'
 // new from palette
 export const primary1Color = '#1f243d'
 export const primary2Color = '#484c68'
-export const primary3Color = '#000018'
+export const primary3Color = '#000000'
 
 export const secondaryColor = '#180627'
-export const secondaryLightColor = '#cbdee8'
-export const secondaryDarkColor = '#6c7d86'
+export const secondaryLightColor = '#9AACB6'
+export const secondaryDarkColor = '#180627'
 
 // Palette
 export const palette = {
