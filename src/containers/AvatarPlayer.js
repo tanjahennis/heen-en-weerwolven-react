@@ -2,24 +2,17 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { connect as subscribeToWebsocket } from '../actions/websocket'
 import MayorMedal from '../images/mayor-medal.png'
-
 import Avatar from 'material-ui/Avatar';
-import Badge from 'material-ui/Badge';
-
 import './AvatarPlayer.css'
 
-const setClassName = (dead, mayor) => {
+const setClassName = (dead) => {
   if (dead) {
     return 'dead'
   }
-  if (mayor) {
-    return 'mayor'
-  }
 }
 
-const avatarStyle = { display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}
-
 class AvatarPlayer extends PureComponent {
+
   componentWillMount() {
     this.props.subscribeToWebsocket()
   }
@@ -27,17 +20,15 @@ class AvatarPlayer extends PureComponent {
   renderAvatars(player, index){
    return(
     <div key={index}>
-      <div className={setClassName(player.dead, player.mayor, player.receivedMessages)}>
-          <Badge
-            badgeContent={ player.mayor ? <img src={ MayorMedal }
-            className="avatar-medal" alt="MayorMedal" /> : ''}
-            secondary={true}
-          >
-            <div className='avatar-box'>
-              <Avatar src={player.photo} size={100} />
-              <div className='playerName'>{player.name}</div>
-            </div>
-         </Badge>
+      <div className={setClassName(player.dead)}>
+        <div className="avatar">
+          <Avatar src={player.photo} size={100} />
+          <span className="playerName">
+            <div>{player.mayor ? <img src={MayorMedal} className="medal" alt="MayorMedal" /> : ''}</div>
+            <div>{player.name}</div>
+          </span>
+          <div className="playerCharacter">{player.character}</div>
+        </div>
       </div>
     </div>
    )
@@ -45,7 +36,7 @@ class AvatarPlayer extends PureComponent {
 
   render() {
     return (
-      <div style={avatarStyle}>
+      <div className="avatarContainer">
           { this.props.players.map(this.renderAvatars) }
       </div>
     )

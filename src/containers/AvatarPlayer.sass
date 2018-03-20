@@ -1,0 +1,32 @@
+@import "../styles/colors.sass"
+
+.avatarContainer
+  display: flex
+  flex-flow: row wrap
+
+  .dead
+    img
+      filter: opacity(30%)
+
+  .avatar
+    display: flex
+    flex-flow: column nowrap
+    align-items: center
+    margin: 1rem
+
+    .playerName
+      display: flex
+      flex-flow: row nowrap
+      color: $lightGrey
+      font-size: 1.25rem
+      height: 2rem
+      padding-top: 0.75rem
+
+      .medal
+        height: 2rem
+        width: auto
+        margin-left: -1.5rem
+
+    .playerCharacter
+      color: $red
+      font-variant: small-caps
