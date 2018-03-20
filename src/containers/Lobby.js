@@ -154,13 +154,8 @@ class Lobby extends PureComponent {
   }
 
   render() {
-    const lobbyAndSideBar = {
-      height: '90vh',
-      overflowY: 'scroll'
-    }
-
     return (
-    <div style={lobbyAndSideBar}>
+    <div>
       <div className="lobby">
         <div className="village-container">
           <VillageAvatar players={this.props.players}/>

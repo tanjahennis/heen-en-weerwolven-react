@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-
 import PlayerMenuButton from './PlayerMenuButton'
 import updateDeath from '../../actions/games/updateDeath'
 import updateMayor from '../../actions/games/updateMayor'
@@ -8,13 +7,12 @@ import updateSender from '../../actions/games/updateSender'
 import updateVillage from '../../actions/games/updateVillage'
 import updateCharacter from '../../actions/games/updateCharacter'
 import deletePlayer from '../../actions/games/delete'
-
 import MessageBox from './MessageBox'
 import Dialog from 'material-ui/Dialog'
 import RaisedButton from 'material-ui/RaisedButton'
-
-import DropDownMenu from 'material-ui/DropDownMenu';
-import MenuItem from 'material-ui/MenuItem';
+import DropDownMenu from 'material-ui/DropDownMenu'
+import MenuItem from 'material-ui/MenuItem'
+import './PlayerDialog.css'
 
 const customContentStyle = {
   width: '90%',
@@ -98,7 +96,7 @@ class PlayerDialog extends PureComponent {
     let message = player.messageSent
     if (message !== 'sent' ) {
       return(
-      <MessageBox key={index} players={ this.props.players } player = {player}/>
+      <MessageBox key={index} players={ this.props.players } player={player}/>
       )
     } else {
       return <h1>Message sent!</h1>
@@ -220,13 +218,13 @@ class PlayerDialog extends PureComponent {
     ]
 
     return (
-      <div>
+      <div className="dialog">
         <PlayerMenuButton disabled={this.props.player.messageSent === 'sent' || this.props.player.dead ? true : false } icon={message} onClick={() => this.handleOpen(this.props.player)} />
         <PlayerMenuButton disabled={this.props.player.dead ? true : false} icon={this.props.player.dead ? notMayor : ( this.props.player.mayor ? makeMayor : isMayor )} onClick={() => this.makeMayor(this.props.player)} />
         <PlayerMenuButton icon={dead} onClick={() => this.killPlayer(this.props.player)}/>
         <PlayerMenuButton disabled={this.props.player.dead? true : false} icon={village} onClick={() => this.moveVillage(this.props.player)}/>
         <PlayerMenuButton icon={DeletePlayer} onClick={() => this.deleteThisPlayer(this.props.player)}/>
-        <DropDownMenu value={this.state.value}>
+        <DropDownMenu value={this.state.value} labelStyle={{ color: '#1F243D', fontSize: '1rem' }} selectedMenuItemStyle={{ color: '#EFEFEF' }}>
           <MenuItem value="villager" primaryText="villager" onClick={() => this.addVillager(this.props.player)} />
           <MenuItem value="werewolf" primaryText="werewolf" onClick={() => this.addWerewolf(this.props.player)} />
           <MenuItem value="witch" primaryText="witch" onClick={() => this.addWitch(this.props.player)} />

@@ -39,7 +39,7 @@ class Sidebar extends PureComponent {
     })
 
     return (
-      <div className="sideBar">
+      <div className="container">
         <span className="header">
           <h3>wakkerdam</h3>
           <h3 className="peopleCounter">{deadPlayerCountVillage1.length}/{village1.length}</h3>

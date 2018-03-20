@@ -1,14 +1,14 @@
-.sideBar {
+.container {
   border-left: 1px solid #9AACB6;
   border-bottom: 1px solid #9AACB6; }
-  .sideBar .header {
+  .container .header {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
     color: #9AACB6;
     font-variant: small-caps; }
-    .sideBar .header .peopleCounter {
+    .container .header .peopleCounter {
       font-size: 1rem; }
-  .sideBar .header:last-of-type {
+  .container .header:last-of-type {
     border-top: 1px solid #9AACB6; }

@@ -1,24 +1,31 @@
 .sidebarName {
   margin: 0.5rem 0; }
   .sidebarName .nameBlock {
-    border: 1px solid hotpink;
     color: #EFEFEF;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
-    align-items: center; }
+    align-items: center;
+    height: 2rem; }
     .sidebarName .nameBlock .playerName {
-      margin: 0 1rem; }
+      margin: 0 1rem;
+      font-variant: small-caps;
+      font-size: 1.125rem;
+      letter-spacing: 0.05rem; }
+    .sidebarName .nameBlock .playerDialog {
+      display: none; }
   .sidebarName .nameBlock:hover {
-    border: 1px solid lightgreen;
     background-color: #EFEFEF;
     color: #180627; }
+    .sidebarName .nameBlock:hover .playerDialog {
+      display: flex;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      height: 2rem; }
+    .sidebarName .nameBlock:hover .playerAddOns {
+      display: none; }
     .sidebarName .nameBlock:hover svg {
       color: #180627 !important; }
   .sidebarName .medalSidebar {
-    border: 1px dashed red;
-    height: 1.75rem;
+    height: 1.5rem;
     margin-right: 1rem; }
-  .sidebarName .popOver:hover {
-    border: 1px solid orange;
-    background-color: #EFEFEF; }

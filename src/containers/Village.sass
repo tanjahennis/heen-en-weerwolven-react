@@ -4,29 +4,38 @@
   margin: 0.5rem 0
 
   .nameBlock
-    border: 1px solid hotpink
     color: $lightGrey
     display: flex
     flex-flow: row nowrap
     justify-content: flex-start
     align-items: center
+    height: 2rem
 
     .playerName
       margin: 0 1rem
+      font-variant: small-caps
+      font-size: 1.125rem
+      letter-spacing: 0.05rem
+
+    .playerDialog
+      display: none
 
   .nameBlock:hover
-    border: 1px solid lightgreen
     background-color: $lightGrey
     color: $midnightBlue
+
+    .playerDialog
+      display: flex
+      overflow-x: scroll
+      overflow-y: hidden
+      height: 2rem
+
+    .playerAddOns
+      display: none
 
     svg
       color: $midnightBlue !important
 
   .medalSidebar
-    border: 1px dashed red
-    height: 1.75rem
+    height: 1.5rem
     margin-right: 1rem
-
-  .popOver:hover
-    border: 1px solid orange
-    background-color: $lightGrey

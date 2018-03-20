@@ -19,11 +19,13 @@ class Village extends PureComponent {
         <div className='sidebarName'>
           <div className='nameBlock'>
             <div className='playerName'>{player.name}</div>
-            {player.mayor && player.dead === false ? <img src={MayorMedal} className="medalSidebar" alt="MayorMedal" /> : ''}
-            {player.receivedMessages.length && unreadMessages.length > 0 && player.dead === false ? <EmailIcon /> : ''}
-          </div>
-          <div className='popOver'>
-            {<PlayerDialog player={player} {...player.messageSent} /> }
+            <div className="playerAddOns">
+              {player.mayor && player.dead === false ? <img src={MayorMedal} className="medalSidebar" alt="MayorMedal" /> : ''}
+              {player.receivedMessages.length && unreadMessages.length > 0 && player.dead === false ? <EmailIcon /> : ''}
+            </div>
+            <div className="playerDialog">
+              <PlayerDialog player={player} {...player.messageSent} />
+            </div>
           </div>
         </div>
       </div>
