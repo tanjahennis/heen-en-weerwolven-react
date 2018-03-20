@@ -1,0 +1,32 @@
+@import "../styles/colors.sass"
+
+.sidebarName
+  margin: 0.5rem 0
+
+  .nameBlock
+    border: 1px solid hotpink
+    color: $lightGrey
+    display: flex
+    flex-flow: row nowrap
+    justify-content: flex-start
+    align-items: center
+
+    .playerName
+      margin: 0 1rem
+
+  .nameBlock:hover
+    border: 1px solid lightgreen
+    background-color: $lightGrey
+    color: $midnightBlue
+
+    svg
+      color: $midnightBlue !important
+
+  .medalSidebar
+    border: 1px dashed red
+    height: 1.75rem
+    margin-right: 1rem
+
+  .popOver:hover
+    border: 1px solid orange
+    background-color: $lightGrey
