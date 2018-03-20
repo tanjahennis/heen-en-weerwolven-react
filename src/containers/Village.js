@@ -16,7 +16,7 @@ class Village extends PureComponent {
 
     return(
       <div key={index}>
-        <div className='sidebarName'>
+        <div className='villageBlock'>
           <div className='nameBlock'>
             <div className='playerName'>{player.name}</div>
             <div className="playerAddOns">

@@ -1,31 +1,35 @@
-.sidebarName {
+.villageBlock {
   margin: 0.5rem 0; }
-  .sidebarName .nameBlock {
+  .villageBlock .nameBlock {
     color: #EFEFEF;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
-    height: 2rem; }
-    .sidebarName .nameBlock .playerName {
+    height: 2rem;
+    width: 15rem; }
+    .villageBlock .nameBlock .playerName {
       margin: 0 1rem;
       font-variant: small-caps;
       font-size: 1.125rem;
       letter-spacing: 0.05rem; }
-    .sidebarName .nameBlock .playerDialog {
+    .villageBlock .nameBlock .playerDialog {
       display: none; }
-  .sidebarName .nameBlock:hover {
+  .villageBlock .nameBlock:hover {
     background-color: #EFEFEF;
     color: #180627; }
-    .sidebarName .nameBlock:hover .playerDialog {
+    .villageBlock .nameBlock:hover .playerName {
+      border-right: 1px solid #180627;
+      padding-right: 0.5rem; }
+    .villageBlock .nameBlock:hover .playerDialog {
       display: flex;
       overflow-x: scroll;
       overflow-y: hidden;
       height: 2rem; }
-    .sidebarName .nameBlock:hover .playerAddOns {
+    .villageBlock .nameBlock:hover .playerAddOns {
       display: none; }
-    .sidebarName .nameBlock:hover svg {
+    .villageBlock .nameBlock:hover svg {
       color: #180627 !important; }
-  .sidebarName .medalSidebar {
+  .villageBlock .medalSidebar {
     height: 1.5rem;
     margin-right: 1rem; }

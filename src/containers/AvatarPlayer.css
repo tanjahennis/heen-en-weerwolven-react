@@ -13,10 +13,12 @@
       flex-flow: row nowrap;
       color: #EFEFEF;
       font-size: 1.25rem;
+      font-variant: small-caps;
+      letter-spacing: 0.05rem;
       height: 2rem;
       padding-top: 0.75rem; }
       .avatarContainer .avatar .playerName .medal {
-        height: 2rem;
+        height: 1.5rem;
         width: auto;
         margin-left: -1.5rem; }
     .avatarContainer .avatar .playerCharacter {

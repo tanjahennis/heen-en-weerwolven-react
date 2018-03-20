@@ -223,7 +223,6 @@ class PlayerDialog extends PureComponent {
         <PlayerMenuButton disabled={this.props.player.dead ? true : false} icon={this.props.player.dead ? notMayor : ( this.props.player.mayor ? makeMayor : isMayor )} onClick={() => this.makeMayor(this.props.player)} />
         <PlayerMenuButton icon={dead} onClick={() => this.killPlayer(this.props.player)}/>
         <PlayerMenuButton disabled={this.props.player.dead? true : false} icon={village} onClick={() => this.moveVillage(this.props.player)}/>
-        <PlayerMenuButton icon={DeletePlayer} onClick={() => this.deleteThisPlayer(this.props.player)}/>
         <DropDownMenu value={this.state.value} labelStyle={{ color: '#1F243D', fontSize: '1rem' }} selectedMenuItemStyle={{ color: '#EFEFEF' }}>
           <MenuItem value="villager" primaryText="villager" onClick={() => this.addVillager(this.props.player)} />
           <MenuItem value="werewolf" primaryText="werewolf" onClick={() => this.addWerewolf(this.props.player)} />
@@ -236,6 +235,7 @@ class PlayerDialog extends PureComponent {
           <MenuItem value="brother" primaryText="brother" onClick={() => this.addBrother(this.props.player)} />
           <MenuItem value="thief" primaryText="thief" onClick={() => this.addThief(this.props.player)} />
         </DropDownMenu>
+        <PlayerMenuButton icon={DeletePlayer} onClick={() => this.deleteThisPlayer(this.props.player)}/>
 
         <Dialog
           actions={actions}
