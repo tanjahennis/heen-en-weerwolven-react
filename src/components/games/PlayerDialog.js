@@ -219,7 +219,6 @@ class PlayerDialog extends PureComponent {
 
     return (
       <div className="dialog">
-        <PlayerMenuButton disabled={this.props.player.messageSent === 'sent' || this.props.player.dead ? true : false } icon={message} onClick={() => this.handleOpen(this.props.player)} />
         <PlayerMenuButton disabled={this.props.player.dead ? true : false} icon={this.props.player.dead ? notMayor : ( this.props.player.mayor ? makeMayor : isMayor )} onClick={() => this.makeMayor(this.props.player)} />
         <PlayerMenuButton icon={dead} onClick={() => this.killPlayer(this.props.player)}/>
         <PlayerMenuButton disabled={this.props.player.dead? true : false} icon={village} onClick={() => this.moveVillage(this.props.player)}/>
@@ -236,6 +235,7 @@ class PlayerDialog extends PureComponent {
           <MenuItem value="thief" primaryText="thief" onClick={() => this.addThief(this.props.player)} />
         </DropDownMenu>
         <PlayerMenuButton icon={DeletePlayer} onClick={() => this.deleteThisPlayer(this.props.player)}/>
+        <PlayerMenuButton disabled={this.props.player.messageSent === 'sent' || this.props.player.dead ? true : false } icon={message} onClick={() => this.handleOpen(this.props.player)} />
 
         <Dialog
           actions={actions}
