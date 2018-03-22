@@ -2,25 +2,25 @@ import React, { PureComponent } from 'react'
 import ReactCountdownClock from 'react-countdown-clock'
 import ReactHowler from 'react-howler'
 import mp3_bell from '../../sounds/churchBell.mp3'
-import mp3_howl from '../../sounds/wolf6.mp3'
+// import mp3_howl from '../../sounds/wolf6.mp3'
 
-import Dialog from 'material-ui/Dialog'
-import FlatButton from 'material-ui/FlatButton'
+// import Dialog from 'material-ui/Dialog'
+// import FlatButton from 'material-ui/FlatButton'
 import IconButton from 'material-ui/IconButton'
 import RestoreIcon from 'material-ui/svg-icons/action/restore'
 import Star from 'material-ui/svg-icons/action/grade'
 import './Timer.css'
 
-const customContentStyle = {
-  width: '100%',
-  maxWidth: 'none',
-}
-
-const flatButtonStyle = {
-  height : '5rem',
-  algin: 'center',
-  fontSize: '1rem',
-}
+// const customContentStyle = {
+//   width: '100%',
+//   maxWidth: 'none',
+// }
+//
+// const flatButtonStyle = {
+//   height : '5rem',
+//   algin: 'center',
+//   fontSize: '1rem',
+// }
 
 class Timer extends PureComponent {
   constructor() {
