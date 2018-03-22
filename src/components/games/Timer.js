@@ -11,12 +11,6 @@ import RestoreIcon from 'material-ui/svg-icons/action/restore'
 import Star from 'material-ui/svg-icons/action/grade'
 import './Timer.css'
 
-const  timerStyle  = {
-  cursor: 'pointer',
-  width: '110px',
-  display: 'flex',
-}
-
 const customContentStyle = {
   width: '100%',
   maxWidth: 'none',
@@ -34,8 +28,8 @@ class Timer extends PureComponent {
 
     this.state = {
       paused: true,
-      color: '#1F243D',
-      seconds: 300,
+      color: '#EFEFEF',
+      seconds: 10,
       open: false,
       playing: false,
       playing2: false,
@@ -49,7 +43,7 @@ class Timer extends PureComponent {
   }
 
   onTick(seconds) {
-    if(seconds < 100) {
+    if(seconds < 4) {
       this.setState ({
         color: "#D32F2F",
         playing: true,
@@ -60,8 +54,8 @@ class Timer extends PureComponent {
   resetTimer() {
     this.setState ({
       paused: true,
-      seconds: 300 + Math.random()*0.000000000001,
-      color: '#1F243D',
+      seconds: 10 + Math.random()*0.000000000001,
+      color: '#EFEFEF',
       playing: false,
     })
   }
@@ -69,7 +63,7 @@ class Timer extends PureComponent {
   handleOpen() {
     this.setState({
       open: true,
-      playing2: true
+      playing2: true,
     })
   }
 
@@ -81,52 +75,48 @@ class Timer extends PureComponent {
   }
 
   render() {
-    const actions = [
-      <FlatButton
-        style={ flatButtonStyle }
-        label="Continue..."
-        primary={true}
-        onClick={this.handleClose}
-      />
-    ]
-    return (
-    <div>
-      <div style={timerStyle}>
-        <ReactCountdownClock
-           ref={(c) => this._timer = c}
-           onTick={this.onTick.bind(this)}
-           seconds={this.state.seconds}
-           color={this.state.color}
-           pausedText={'Play'}
-           alpha={0.9}
-           size={100}
-           paused={this.state.paused}
-           onComplete={this.handleOpen.bind(this)}
-           onClick={this.setPause.bind(this) }
-        />
-      </div>
-      <div>
-       <ReactHowler
-         src={mp3_bell}
-         playing={this.state.playing}
-         ref={(ref) => (this.player = ref)}
-       />
-      </div>
+    // const actions = [
+    //   <FlatButton
+    //     style={ flatButtonStyle }
+    //     label="Continue..."
+    //     primary={true}
+    //     onClick={this.handleClose}
+    //   />
+    // ]
 
-      <div className='resetButton'>
+    return (
+    <div className="timerContainer">
+      <ReactCountdownClock
+        ref={(c) => this._timer = c}
+        onTick={this.onTick.bind(this)}
+        seconds={this.state.seconds}
+        color={this.state.color}
+        pausedText={'Play'}
+        // alpha={0.5}
+        size={85}
+        weight={10}
+        fontSize={'1rem'}
+        paused={this.state.paused}
+        onComplete={this.resetTimer.bind(this)}
+        onClick={this.setPause.bind(this)}
+        />
+       <ReactHowler
+        src={mp3_bell}
+        playing={this.state.playing}
+        ref={(ref) => (this.player = ref)}
+       />
+
+      <div className='icons'>
         <IconButton tooltip="Reset Timer" mini={true}>
           <RestoreIcon onClick={this.resetTimer.bind(this)}/>
         </IconButton>
-      </div>
-
-      <div className='nightButton'>
         <IconButton tooltip="Start Night" mini={true}>
           <Star primary={true} onClick={this.handleOpen.bind(this)}/>
         </IconButton>
       </div>
 
 
-      <div>
+      {/* <div>
         <Dialog
           contentStyle={customContentStyle}
           autoScrollBodyContent={true}
@@ -136,11 +126,11 @@ class Timer extends PureComponent {
           onRequestClose={this.handleClose}
         >
 
-          <ReactHowler
-            src={mp3_howl}
-            playing={this.state.playing2}
-            ref={(ref) => (this.player = ref)}
-          />
+        <ReactHowler
+          src={mp3_howl}
+          playing={this.state.playing2}
+          ref={(ref) => (this.player = ref)}
+        />
 
           <h1 style={{ textAlign : 'center' }}>
 
@@ -172,7 +162,7 @@ class Timer extends PureComponent {
 
           </h3>
         </Dialog>
-      </div>
+      </div> */}
     </div>
     )
   }

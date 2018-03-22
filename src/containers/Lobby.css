@@ -1,7 +1,9 @@
 .lobby {
-  border: 2px solid yellow;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between; }
+  justify-content: flex-end; }
   .lobby .villageContainer {
-    border: 2px solid lightGreen; }
+    width: 100%; }
+  .lobby .timer {
+    margin-top: 1rem;
+    margin-right: 1rem; }
