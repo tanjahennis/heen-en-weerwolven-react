@@ -7,7 +7,7 @@ export default class ApiClient {
 
   constructor(host, options = {}) {
     this.host = process.env.NODE_ENV === 'production'
-      ? 'https://werewolven.herokuapp.com'
+      ? 'https://murmuring-reaches-48818.herokuapp.com'
       : (host || 'http://localhost:3030')
 
     this.options = { ...this.defaultOptions, ...options }
