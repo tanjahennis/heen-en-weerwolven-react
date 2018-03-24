@@ -1,43 +1,9 @@
 .lobby {
-  width: 100%;
   display: flex;
-}
-
-.Lobby {
-  margin-top: 0px;
-}
-
-.village-container {
-  width: 78%;
-  position: relative;
-}
-
-.village-container h1 {
-  color: #EFEFEF;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.timer {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.sidebar {
-  right: 0;
-  width: 22%;
-}
-
-.sidebar h1{
-  display: block;
-  font-size: 1.4em;
-  background-color: #9aacb6;
-  color: #EFEFEF;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-
-/* font-sizes for sidebar */
+  flex-flow: row nowrap;
+  justify-content: flex-end; }
+  .lobby .villageContainer {
+    width: 100%; }
+  .lobby .timer {
+    margin-top: 1rem;
+    margin-right: 1rem; }

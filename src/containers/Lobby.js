@@ -154,19 +154,13 @@ class Lobby extends PureComponent {
   }
 
   render() {
-    const lobbyAndSideBar = {
-      height: '90vh',
-      overflowY: 'scroll'
-    }
-
     return (
-    <div style={lobbyAndSideBar}>
       <div className="lobby">
-        <div className="village-container">
+        <div className="villageContainer">
           <VillageAvatar players={this.props.players}/>
-          <div className="timer">
-            <Timer />
-          </div>
+        </div>
+        <div className="timer">
+          <Timer />
         </div>
         <div className="sidebar">
           <Sidebar />
@@ -174,7 +168,6 @@ class Lobby extends PureComponent {
           { this.props.players.map((player, index) => this.renderMayorPopUp(player, index, this.state.mayorOpen)) }
         </div>
       </div>
-    </div>
     )
   }
 }

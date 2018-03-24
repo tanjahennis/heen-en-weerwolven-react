@@ -3,9 +3,8 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { fetchPlayers} from '../actions/games/fetch'
 import Village from './Village'
-
-import { List } from 'material-ui/List';
-import Divider from 'material-ui/Divider';
+import { List } from 'material-ui/List'
+import './Sidebar.css'
 
 class Sidebar extends PureComponent {
   static propTypes = {
@@ -25,22 +24,6 @@ class Sidebar extends PureComponent {
   }
 
   render() {
-    const sidebarStyle = {
-      backgroundColor: '#1f243d',
-      overflow: 'hidden',
-      position: 'absolute',
-      padding: 0,
-      margin: 0,
-      right: 0,
-      width: '22%'
-    }
-    const fixedBar = {
-      height: '40vh',
-      overflowY: 'scroll',
-      padding: 0,
-      margin: 0,
-    }
-
     const village1 = this.props.players.filter((player) => {
       return player.village[0].name === "Wakkerdam"
     })
@@ -56,33 +39,25 @@ class Sidebar extends PureComponent {
     })
 
     return (
-      <div style={sidebarStyle}>
+      <div className="container">
+        <span className="header">
+          <h3>wakkerdam</h3>
+          <h3 className="peopleCounter">{deadPlayerCountVillage1.length}/{village1.length}</h3>
+        </span>
         <List>
-        <div style={{display:'inline-flex', justifyContent:'space-between' , backgroundColor: '#9aacb6', width: '100%'}}>
-          <h1 style={{paddingTop: '1.2rem', paddingLeft:'0.6rem'}}> WAKKERDAM </h1>
-          <p style={{paddingRight: '0.6rem', paddingBottom:'0.1rem'}}> {deadPlayerCountVillage1.length}/{village1.length} </p>
-        </div>
-        <div style={fixedBar}>
           <Village players={village1} />
-        </div>
-       </List>
-
-      <Divider />
-
+        </List>
+        <span className="header">
+          <h3>sluimervoort</h3>
+          <h3 className="peopleCounter">{deadPlayerCountVillage2.length}/{village2.length} </h3>
+        </span>
         <List>
-        <div style={{display:'inline-flex', justifyContent:'space-between' , backgroundColor: '#9aacb6', width: '100%'}}>
-          <h1 style={{paddingTop: '1.2rem', paddingLeft:'0.6rem'}} > SLUIMERVOORT </h1>
-          <p style={{paddingRight: '0.6rem', paddingBottom:'0.1rem'}}> {deadPlayerCountVillage2.length}/{village2.length} </p>
-        </div>
-          <div style={fixedBar}>
-            <Village players={village2} />
-          </div>
+          <Village players={village2} />
         </List>
       </div>
     )
   }
 }
-
 
 const mapStateToProps = ({ currentUser, players }) => {
   return {

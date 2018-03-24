@@ -4,45 +4,28 @@ import PlayerDialog from '../components/games/PlayerDialog'
 import MayorMedal from '../images/mayor-medal.png'
 import VillageMenuButton from '../components/games/VillageMenuButton'
 import movePlayers from '../actions/games/move'
-
 import EmailIcon from 'material-ui/svg-icons/communication/email'
 import './Village.css'
 
-const setClassName = ( mayor, receivedMessages, dead) => {
-  if (mayor) {
-      return 'sidebar-mayor'
-  }
-  if ( receivedMessages.length < 0){
-    return ''
-  } else if (receivedMessages.length > 0){
-    return 'sidebar-mail'
-  }
-
-  if (dead) {
-    return 'sidebar-dead'
-  }
-}
-
 class Village extends PureComponent {
+
   renderPlayer(player, index) {
     let unreadMessages = player.receivedMessages.filter(function(message){
       return message.messageRead === false
     })
 
     return(
-      <div key={index} className={setClassName(player.mayor, player.receivedMessages, player.dead)}>
-        <div className='sidebar-name'>
-          <div className='nameblock'>
-            <p>
-              {player.name}
-            </p>
-            <span>
-              {player.mayor && player.dead === false ? <img src={MayorMedal} className="medal-sidebar" alt="MayorMedal" /> : ''}
-              <span className="email-sidebar">{player.receivedMessages.length && unreadMessages.length > 0 && player.dead === false ? <EmailIcon /> : ''}</span>
-            </span>
-          </div>
-          <div className='pop-over'>
-            {<PlayerDialog player={player} {...player.messageSent} /> }
+      <div key={index}>
+        <div className='villageBlock'>
+          <div className='nameBlock'>
+            <div className='playerName'>{player.name}</div>
+            <div className="playerAddOns">
+              {player.mayor && player.dead === false ? <img src={MayorMedal} className="medalSidebar" alt="MayorMedal" /> : ''}
+              {player.receivedMessages.length && unreadMessages.length > 0 && player.dead === false ? <EmailIcon /> : ''}
+            </div>
+            <div className="playerDialog">
+              <PlayerDialog player={player} {...player.messageSent} />
+            </div>
           </div>
         </div>
       </div>
@@ -78,8 +61,8 @@ class Village extends PureComponent {
 
     return (
       <div>
-        <VillageMenuButton label={`Move players to ${villageName}`} onClick={ () => this.moveAllPlayers(this.props.players) }/>
         <div>{ this.props.players.map(this.renderPlayer) }</div>
+        <VillageMenuButton label={`Move players to ${villageName}`} onClick={ () => this.moveAllPlayers(this.props.players) } />
       </div>
     )
   }

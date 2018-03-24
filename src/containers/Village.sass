@@ -1,0 +1,46 @@
+@import "../styles/colors.sass"
+
+.villageBlock
+  margin: 0.5rem 0
+
+  .nameBlock
+    color: $lightGrey
+    display: flex
+    flex-flow: row nowrap
+    justify-content: flex-start
+    align-items: center
+    height: 2rem
+    width: 15rem
+
+    .playerName
+      margin: 0 1rem
+      font-variant: small-caps
+      font-size: 1.125rem
+      letter-spacing: 0.05rem
+
+    .playerDialog
+      display: none
+
+  .nameBlock:hover
+    background-color: $lightGrey
+    color: $midnightBlue
+
+    .playerName
+      border-right: 1px solid $midnightBlue
+      padding-right: 0.5rem
+
+    .playerDialog
+      display: flex
+      overflow-x: scroll
+      overflow-y: hidden
+      height: 2rem
+
+    .playerAddOns
+      display: none
+
+    svg
+      color: $midnightBlue !important
+
+  .medalSidebar
+    height: 1.5rem
+    margin-right: 1rem

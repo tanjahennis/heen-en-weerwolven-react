@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-
 import IconButton from 'material-ui/IconButton'
 import MovePlayers from 'material-ui/svg-icons/action/card-travel'
+import './VillageMenuButton.css'
 
 class VillageMenuButton extends PureComponent {
   static propTypes = {
@@ -11,15 +11,17 @@ class VillageMenuButton extends PureComponent {
 
 render() {
     const { onClick } = this.props
+
     return (
-      <IconButton
-        tooltip={this.props.label}
-        onClick={ onClick }
-        tooltipPosition="bottom-right"
-        style={{ marginTop: 5, backgroundColor: '#1f243d' }}
-      >
-        <MovePlayers />
-      </IconButton>
+      <div className="villageMenuButton">
+        <p>verhuis iedereen</p>
+        <IconButton
+          tooltip={this.props.label}
+          onClick={onClick}
+          tooltipPosition="bottom-right">
+          <MovePlayers />
+        </IconButton>
+      </div>
     )
   }
 }

@@ -9,13 +9,11 @@ import FlatButton from 'material-ui/FlatButton'
 import IconMenu from 'material-ui/IconMenu'
 import MenuItem from 'material-ui/MenuItem'
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert'
-
 import RegisterPlayer from '../RegisterPlayer'
 import deletePlayer from '../../actions/games/delete'
 import resetPlayer from '../../actions/games/reset'
 import signOut from '../../actions/user/sign-out'
-
-const TITLE = 'HEEN EN WEERWOLVEN'
+import './Navigation.css'
 
 class Navigation extends PureComponent {
   static propTypes = {
@@ -84,26 +82,21 @@ class Navigation extends PureComponent {
 
   render() {
     const { signedIn } = this.props
-    const divStyle = {
-      display: 'flex'
-    }
 
     return (
       <AppBar
         showMenuIconButton={false}
-        title={TITLE}
-        style={{ textAlign: 'left' }}
-        titleStyle={{ fontSize: '3rem', marginLeft: '50px', marginTop: '0.5rem', marginBottom: '0.5rem' }}
+        title="heen en weerwolven"
+        className="navBar"
         iconElementRight={signedIn ?
-          <div style={divStyle}>
-            { this.state.gamePage ? <FlatButton primary={false} style={{ marginTop: 5 }} labelStyle={{ fontSize: '1.25rem' }} label="Read message" onClick={this.goToMessage} /> :
-            <FlatButton primary={true} style={{ color: 'white', marginTop: 5 }} labelStyle={{ fontSize: '1.25rem' }} label="Back to game" onClick={this.goHome} />}
+          <div className="navigation">
+            { this.state.gamePage ? <FlatButton primary={false} label="read message" onClick={this.goToMessage} /> :
+            <FlatButton primary={true} label="Back to game" onClick={this.goHome} />}
             <RegisterPlayer />
             <IconMenu
-              iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
+              iconButtonElement={<IconButton className="iconButton"><MoreVertIcon /></IconButton>}
               anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-              targetOrigin={{horizontal: 'right', vertical: 'top'}}
-              >
+              targetOrigin={{horizontal: 'right', vertical: 'top'}}>
               <MenuItem primaryText='Remove all players' onClick={ () => this.deleteAllPlayers(this.props.players) }/>
               <MenuItem primaryText='Reset game' onClick={ () => this.resetGame(this.props.players)}/>
               <MenuItem primaryText="Sign out" label="Sign out" onClick={this.signOut.bind(this)} />
