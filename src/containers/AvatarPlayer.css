@@ -2,7 +2,7 @@
   display: flex;
   flex-flow: row wrap; }
   .avatarContainer .dead img {
-    filter: opacity(30%); }
+    filter: opacity(15%); }
   .avatarContainer .avatar {
     display: flex;
     flex-flow: column nowrap;
